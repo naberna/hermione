@@ -1,0 +1,117 @@
+html {
+    font-size: 62.5%; /* the default is 16pixels, so it 10 px = 1 rem*/
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh; /*100 viewport height */
+    font-size: 1.6rem; /*16 pixels*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/*Layout*/
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+}
+
+header {
+    grid-area: header; /*we are connecting this element to the header template*/
+    background-color: #440C8F;
+}
+
+main {
+    grid-area: main;
+    padding: 1rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #440C8F;
+    color: #ffffff;
+}
+
+/*Common*/
+h1{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+h2{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff8000;
+}
+
+/*Header*/
+header a{
+    color: #fff;
+    padding: 1rem;
+}
+
+a.brand {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.row { /*item next to each other*/
+    display: flex;
+    flex-wrap: wrap; /*to make rows responsive*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row.center {
+    justify-content: center;
+}
+
+/*Image*/
+img {
+    border-radius: 0.5;
+}
+
+img.medium {
+    max-width: 29rem;
+    width: 100%;
+}
+
+/*Card*/
+.card {
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body > * { /*all direct child of card body*/
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2rem;
+}
+
+/*Rating*/
+.rating span {
+    color: #f0c040;
+    margin: 0.1rem;
+}
