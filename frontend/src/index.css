@@ -81,7 +81,7 @@ button {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f8f8f8;
+  background-color: #f8f8f8;
   cursor: pointer;
 }
 
@@ -128,7 +128,7 @@ a.brand {
   flex: 1 1 25rem;
 }
 
-.col-1 {
+.col-2 {
   flex: 2 1 50rem;
 }
 
@@ -181,6 +181,22 @@ img.large {
   color: #20a020;
 }
 
-.error {
+.danger {
   color: #a02020;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
 }
