@@ -17,6 +17,9 @@ const {
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
   PRODUCT_DELETE_RESET,
+  PRODUCT_CATEGORY_LIST_REQUEST,
+  PRODUCT_CATEGORY_LIST_SUCCESS,
+  PRODUCT_CATEGORY_LIST_FAIL,
 } = require('../constants/productConstants');
 
 export const productListReducer = (
@@ -35,6 +38,22 @@ export const productListReducer = (
   }
 };
 
+export const productCategoryListReducer = (
+  state = { loading: true, products: [] },
+  action
+) => {
+  switch (action.type) {
+    case PRODUCT_CATEGORY_LIST_REQUEST:
+      return { loading: true };
+    case PRODUCT_CATEGORY_LIST_SUCCESS:
+      return { loading: false, categories: action.payload };
+    case PRODUCT_CATEGORY_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
 export const productDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
@@ -47,7 +66,6 @@ export const productDetailsReducer = (state = { loading: true }, action) => {
       return state;
   }
 };
-
 export const productCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REQUEST:
@@ -62,7 +80,6 @@ export const productCreateReducer = (state = {}, action) => {
       return state;
   }
 };
-
 export const productUpdateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_UPDATE_REQUEST:
@@ -77,7 +94,6 @@ export const productUpdateReducer = (state = {}, action) => {
       return state;
   }
 };
-
 export const productDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_DELETE_REQUEST:
